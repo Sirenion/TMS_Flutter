@@ -5,16 +5,11 @@ import 'package:homework/widgets/name_plate.dart';
 import 'package:homework/widgets/news.dart';
 import 'package:homework/widgets/text_view.dart';
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key, required this.title});
 
   final String title;
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,6 +19,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: SafeArea(
         top: false,
+        left: false,
+        right: false,
         child: Stack(
             clipBehavior: Clip.none,
             children: [

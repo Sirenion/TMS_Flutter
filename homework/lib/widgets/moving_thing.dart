@@ -12,7 +12,7 @@ class _MovingThingState extends State<MovingThing> {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
+    final double width = MediaQuery.of(context).size.width;
     return SizedBox(
       height: 150.0,
       width: width,
@@ -31,7 +31,7 @@ class _MovingThingState extends State<MovingThing> {
               child: Container(
                 width: 75.0,
                 height: 75.0,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(50.0)),
                   color: Colors.black, // changes position of shadow
                 ),

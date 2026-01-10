@@ -18,7 +18,7 @@ class _RotatingStarState extends State<RotatingStar>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(milliseconds: 1500),
+      duration: const Duration(milliseconds: 1500),
       vsync: this,
     );
 
@@ -60,7 +60,11 @@ class _RotatingStarState extends State<RotatingStar>
             child: ScaleTransition(
               scale: _scaleAnimation,
               child: Container(
-                child: Icon(Icons.star, color: Colors.yellow, size: 100.0),
+                child: const Icon(
+                  Icons.star,
+                  color: Colors.yellow,
+                  size: 100.0,
+                ),
               ),
             ),
           ),
@@ -69,14 +73,14 @@ class _RotatingStarState extends State<RotatingStar>
             children: [
               ElevatedButton(
                 onPressed: _launch,
-                child: TextView(
+                child: const TextView(
                   input: "Запустить",
                   textColor: Colors.deepPurple,
                 ),
               ),
               ElevatedButton(
                 onPressed: _stop,
-                child: TextView(
+                child: const TextView(
                   input: "Остановить",
                   textColor: Colors.deepPurple,
                 ),

@@ -12,16 +12,16 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
+      body: const Center(
         child: Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding: EdgeInsets.all(15.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 AnimContainer(),
                 RotatingStar(),
                 HiddenContainer(),
-                const SizedBox(height: 15.0),
+                SizedBox(height: 15.0),
                 MovingThing(),
                 FadingContainer(),
               ],

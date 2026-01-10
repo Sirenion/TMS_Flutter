@@ -26,12 +26,10 @@ class _AnimContainerState extends State<AnimContainer> {
         height: _isExpanded ? 150.0 : 100.0,
         alignment: .center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-          color: _isExpanded
-              ? Colors.orange
-              : Colors.green, // changes position of shadow
+          borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+          color: _isExpanded ? Colors.orange : Colors.green,
         ),
-        child: TextView(input: "Push me", textColor: Colors.white),
+        child: const TextView(input: "Push me", textColor: Colors.white),
       ),
     );
   }

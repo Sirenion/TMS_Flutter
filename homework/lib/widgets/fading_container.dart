@@ -17,7 +17,7 @@ class _FadingContainerState extends State<FadingContainer>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
       vsync: this,
     );
 
@@ -57,11 +57,17 @@ class _FadingContainerState extends State<FadingContainer>
           ),
           ElevatedButton(
             onPressed: _launch,
-            child: TextView(input: "Запустить", textColor: Colors.deepPurple),
+            child: const TextView(
+              input: "Запустить",
+              textColor: Colors.deepPurple,
+            ),
           ),
           ElevatedButton(
             onPressed: _stop,
-            child: TextView(input: "Остановить", textColor: Colors.deepPurple),
+            child: const TextView(
+              input: "Остановить",
+              textColor: Colors.deepPurple,
+            ),
           ),
         ],
       ),

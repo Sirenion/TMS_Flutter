@@ -7,10 +7,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xffbbdefb),
-        leading: Icon(Icons.arrow_back),
+        backgroundColor: const Color(0xffbbdefb),
+        leading: const Icon(Icons.arrow_back),
       ),
-      body: SafeArea(child: Center()),
+      body: const SafeArea(child: Center()),
     );
   }
 }

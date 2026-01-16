@@ -1,0 +1,154 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'models.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_WeatherMainResponse _$WeatherMainResponseFromJson(Map<String, dynamic> json) =>
+    _WeatherMainResponse(
+      coord: json['coord'] == null
+          ? null
+          : Coordinates.fromJson(json['coord'] as Map<String, dynamic>),
+      weather: (json['weather'] as List<dynamic>?)
+          ?.map((e) => Weather.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      base: json['base'] as String?,
+      main: json['main'] == null
+          ? null
+          : WeatherMain.fromJson(json['main'] as Map<String, dynamic>),
+      visibility: (json['visibility'] as num?)?.toInt(),
+      wind: json['wind'] == null
+          ? null
+          : Wind.fromJson(json['wind'] as Map<String, dynamic>),
+      rain: json['rain'] == null
+          ? null
+          : Rain.fromJson(json['rain'] as Map<String, dynamic>),
+      clouds: json['clouds'] == null
+          ? null
+          : Clouds.fromJson(json['clouds'] as Map<String, dynamic>),
+      snow: json['snow'] == null
+          ? null
+          : Snow.fromJson(json['snow'] as Map<String, dynamic>),
+      dt: (json['dt'] as num?)?.toInt(),
+      sys: json['sys'] == null
+          ? null
+          : Sys.fromJson(json['sys'] as Map<String, dynamic>),
+      timezone: (json['timezone'] as num?)?.toInt(),
+      name: json['name'] as String?,
+      cod: (json['cod'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$WeatherMainResponseToJson(
+  _WeatherMainResponse instance,
+) => <String, dynamic>{
+  'coord': instance.coord,
+  'weather': instance.weather,
+  'base': instance.base,
+  'main': instance.main,
+  'visibility': instance.visibility,
+  'wind': instance.wind,
+  'rain': instance.rain,
+  'clouds': instance.clouds,
+  'snow': instance.snow,
+  'dt': instance.dt,
+  'sys': instance.sys,
+  'timezone': instance.timezone,
+  'name': instance.name,
+  'cod': instance.cod,
+};
+
+_Coordinates _$CoordinatesFromJson(Map<String, dynamic> json) => _Coordinates(
+  lon: (json['lon'] as num?)?.toDouble(),
+  lat: (json['lat'] as num?)?.toDouble(),
+);
+
+Map<String, dynamic> _$CoordinatesToJson(_Coordinates instance) =>
+    <String, dynamic>{'lon': instance.lon, 'lat': instance.lat};
+
+_Weather _$WeatherFromJson(Map<String, dynamic> json) => _Weather(
+  id: (json['id'] as num?)?.toInt(),
+  main: json['main'] as String?,
+  description: json['description'] as String?,
+  icon: json['icon'] as String?,
+);
+
+Map<String, dynamic> _$WeatherToJson(_Weather instance) => <String, dynamic>{
+  'id': instance.id,
+  'main': instance.main,
+  'description': instance.description,
+  'icon': instance.icon,
+};
+
+_WeatherMain _$WeatherMainFromJson(Map<String, dynamic> json) => _WeatherMain(
+  temp: (json['temp'] as num?)?.toDouble(),
+  feels_like: (json['feels_like'] as num?)?.toDouble(),
+  temp_min: (json['temp_min'] as num?)?.toDouble(),
+  temp_max: (json['temp_max'] as num?)?.toDouble(),
+  pressure: (json['pressure'] as num?)?.toInt(),
+  humidity: (json['humidity'] as num?)?.toInt(),
+  sea_level: (json['sea_level'] as num?)?.toInt(),
+  grnd_level: (json['grnd_level'] as num?)?.toInt(),
+);
+
+Map<String, dynamic> _$WeatherMainToJson(_WeatherMain instance) =>
+    <String, dynamic>{
+      'temp': instance.temp,
+      'feels_like': instance.feels_like,
+      'temp_min': instance.temp_min,
+      'temp_max': instance.temp_max,
+      'pressure': instance.pressure,
+      'humidity': instance.humidity,
+      'sea_level': instance.sea_level,
+      'grnd_level': instance.grnd_level,
+    };
+
+_Wind _$WindFromJson(Map<String, dynamic> json) => _Wind(
+  speed: (json['speed'] as num?)?.toDouble(),
+  deg: (json['deg'] as num?)?.toInt(),
+  gust: (json['gust'] as num?)?.toDouble(),
+);
+
+Map<String, dynamic> _$WindToJson(_Wind instance) => <String, dynamic>{
+  'speed': instance.speed,
+  'deg': instance.deg,
+  'gust': instance.gust,
+};
+
+_Rain _$RainFromJson(Map<String, dynamic> json) =>
+    _Rain(h: (json['h'] as num?)?.toDouble());
+
+Map<String, dynamic> _$RainToJson(_Rain instance) => <String, dynamic>{
+  'h': instance.h,
+};
+
+_Snow _$SnowFromJson(Map<String, dynamic> json) =>
+    _Snow(h: (json['h'] as num?)?.toDouble());
+
+Map<String, dynamic> _$SnowToJson(_Snow instance) => <String, dynamic>{
+  'h': instance.h,
+};
+
+_Clouds _$CloudsFromJson(Map<String, dynamic> json) =>
+    _Clouds(all: (json['all'] as num?)?.toInt());
+
+Map<String, dynamic> _$CloudsToJson(_Clouds instance) => <String, dynamic>{
+  'all': instance.all,
+};
+
+_Sys _$SysFromJson(Map<String, dynamic> json) => _Sys(
+  type: (json['type'] as num?)?.toInt(),
+  id: (json['id'] as num?)?.toInt(),
+  country: json['country'] as String?,
+  sunrise: (json['sunrise'] as num?)?.toDouble(),
+  sunset: (json['sunset'] as num?)?.toDouble(),
+);
+
+Map<String, dynamic> _$SysToJson(_Sys instance) => <String, dynamic>{
+  'type': instance.type,
+  'id': instance.id,
+  'country': instance.country,
+  'sunrise': instance.sunrise,
+  'sunset': instance.sunset,
+};

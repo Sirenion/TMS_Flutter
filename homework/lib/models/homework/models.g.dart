@@ -83,25 +83,25 @@ Map<String, dynamic> _$WeatherToJson(_Weather instance) => <String, dynamic>{
 
 _WeatherMain _$WeatherMainFromJson(Map<String, dynamic> json) => _WeatherMain(
   temp: (json['temp'] as num?)?.toDouble(),
-  feels_like: (json['feels_like'] as num?)?.toDouble(),
-  temp_min: (json['temp_min'] as num?)?.toDouble(),
-  temp_max: (json['temp_max'] as num?)?.toDouble(),
+  feelsLike: (json['feels_like'] as num?)?.toDouble(),
+  tempMin: (json['temp_min'] as num?)?.toDouble(),
+  tempMax: (json['temp_max'] as num?)?.toDouble(),
   pressure: (json['pressure'] as num?)?.toInt(),
   humidity: (json['humidity'] as num?)?.toInt(),
-  sea_level: (json['sea_level'] as num?)?.toInt(),
-  grnd_level: (json['grnd_level'] as num?)?.toInt(),
+  seaLevel: (json['sea_level'] as num?)?.toInt(),
+  grndLevel: (json['grnd_level'] as num?)?.toInt(),
 );
 
 Map<String, dynamic> _$WeatherMainToJson(_WeatherMain instance) =>
     <String, dynamic>{
       'temp': instance.temp,
-      'feels_like': instance.feels_like,
-      'temp_min': instance.temp_min,
-      'temp_max': instance.temp_max,
+      'feels_like': instance.feelsLike,
+      'temp_min': instance.tempMin,
+      'temp_max': instance.tempMax,
       'pressure': instance.pressure,
       'humidity': instance.humidity,
-      'sea_level': instance.sea_level,
-      'grnd_level': instance.grnd_level,
+      'sea_level': instance.seaLevel,
+      'grnd_level': instance.grndLevel,
     };
 
 _Wind _$WindFromJson(Map<String, dynamic> json) => _Wind(
@@ -117,17 +117,17 @@ Map<String, dynamic> _$WindToJson(_Wind instance) => <String, dynamic>{
 };
 
 _Rain _$RainFromJson(Map<String, dynamic> json) =>
-    _Rain(h: (json['h'] as num?)?.toDouble());
+    _Rain(h: (json['1h'] as num?)?.toDouble());
 
 Map<String, dynamic> _$RainToJson(_Rain instance) => <String, dynamic>{
-  'h': instance.h,
+  '1h': instance.h,
 };
 
 _Snow _$SnowFromJson(Map<String, dynamic> json) =>
-    _Snow(h: (json['h'] as num?)?.toDouble());
+    _Snow(h: (json['1h'] as num?)?.toDouble());
 
 Map<String, dynamic> _$SnowToJson(_Snow instance) => <String, dynamic>{
-  'h': instance.h,
+  '1h': instance.h,
 };
 
 _Clouds _$CloudsFromJson(Map<String, dynamic> json) =>

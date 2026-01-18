@@ -4,13 +4,13 @@ part of 'models.dart';
 abstract class WeatherMain with _$WeatherMain {
   factory WeatherMain({
     required double? temp,
-    required double? feels_like,
-    required double? temp_min,
-    required double? temp_max,
+    @JsonKey(name: 'feels_like') required double? feelsLike,
+    @JsonKey(name: 'temp_min') required double? tempMin,
+    @JsonKey(name: 'temp_max') required double? tempMax,
     required int? pressure,
     required int? humidity,
-    required int? sea_level,
-    required int? grnd_level,
+    @JsonKey(name: 'sea_level') required int? seaLevel,
+    @JsonKey(name: 'grnd_level') required int? grndLevel,
   }) = _WeatherMain;
 
   factory WeatherMain.fromJson(Map<String, dynamic> json) => _$WeatherMainFromJson(json);

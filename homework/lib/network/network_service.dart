@@ -9,11 +9,13 @@ abstract interface class NetworkService {
 }
 
 final class NetworkServiceImp implements NetworkService {
-  final dio = Dio();
+  final Dio _dio;
+
+  NetworkServiceImp({required Dio dio}) : _dio = dio;
 
   @override
   Future<List<User>> getUsers() async {
-    final response = await dio.get<List<dynamic>>('https://jsonplaceholder.typicode.com/users');
+    final response = await _dio.get<List<dynamic>>('https://jsonplaceholder.typicode.com/users');
 
     final data = response.data ?? List.empty();
 
@@ -31,7 +33,7 @@ final class NetworkServiceImp implements NetworkService {
 
     const url = 'https://api.openweathermap.org/data/2.5/weather';
 
-    final response = await dio.get<dynamic>(
+    final response = await _dio.get<dynamic>(
       url,
       queryParameters: {'lat': lat, 'lon': lon, 'appid': apikey, 'units': units, 'lang': lang},
     );

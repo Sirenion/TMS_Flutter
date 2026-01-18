@@ -1031,7 +1031,7 @@ as String?,
 /// @nodoc
 mixin _$WeatherMain {
 
- double? get temp; double? get feels_like; double? get temp_min; double? get temp_max; int? get pressure; int? get humidity; int? get sea_level; int? get grnd_level;
+ double? get temp;@JsonKey(name: 'feels_like') double? get feelsLike;@JsonKey(name: 'temp_min') double? get tempMin;@JsonKey(name: 'temp_max') double? get tempMax; int? get pressure; int? get humidity;@JsonKey(name: 'sea_level') int? get seaLevel;@JsonKey(name: 'grnd_level') int? get grndLevel;
 /// Create a copy of WeatherMain
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1044,16 +1044,16 @@ $WeatherMainCopyWith<WeatherMain> get copyWith => _$WeatherMainCopyWithImpl<Weat
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is WeatherMain&&(identical(other.temp, temp) || other.temp == temp)&&(identical(other.feels_like, feels_like) || other.feels_like == feels_like)&&(identical(other.temp_min, temp_min) || other.temp_min == temp_min)&&(identical(other.temp_max, temp_max) || other.temp_max == temp_max)&&(identical(other.pressure, pressure) || other.pressure == pressure)&&(identical(other.humidity, humidity) || other.humidity == humidity)&&(identical(other.sea_level, sea_level) || other.sea_level == sea_level)&&(identical(other.grnd_level, grnd_level) || other.grnd_level == grnd_level));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WeatherMain&&(identical(other.temp, temp) || other.temp == temp)&&(identical(other.feelsLike, feelsLike) || other.feelsLike == feelsLike)&&(identical(other.tempMin, tempMin) || other.tempMin == tempMin)&&(identical(other.tempMax, tempMax) || other.tempMax == tempMax)&&(identical(other.pressure, pressure) || other.pressure == pressure)&&(identical(other.humidity, humidity) || other.humidity == humidity)&&(identical(other.seaLevel, seaLevel) || other.seaLevel == seaLevel)&&(identical(other.grndLevel, grndLevel) || other.grndLevel == grndLevel));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,temp,feels_like,temp_min,temp_max,pressure,humidity,sea_level,grnd_level);
+int get hashCode => Object.hash(runtimeType,temp,feelsLike,tempMin,tempMax,pressure,humidity,seaLevel,grndLevel);
 
 @override
 String toString() {
-  return 'WeatherMain(temp: $temp, feels_like: $feels_like, temp_min: $temp_min, temp_max: $temp_max, pressure: $pressure, humidity: $humidity, sea_level: $sea_level, grnd_level: $grnd_level)';
+  return 'WeatherMain(temp: $temp, feelsLike: $feelsLike, tempMin: $tempMin, tempMax: $tempMax, pressure: $pressure, humidity: $humidity, seaLevel: $seaLevel, grndLevel: $grndLevel)';
 }
 
 
@@ -1064,7 +1064,7 @@ abstract mixin class $WeatherMainCopyWith<$Res>  {
   factory $WeatherMainCopyWith(WeatherMain value, $Res Function(WeatherMain) _then) = _$WeatherMainCopyWithImpl;
 @useResult
 $Res call({
- double? temp, double? feels_like, double? temp_min, double? temp_max, int? pressure, int? humidity, int? sea_level, int? grnd_level
+ double? temp,@JsonKey(name: 'feels_like') double? feelsLike,@JsonKey(name: 'temp_min') double? tempMin,@JsonKey(name: 'temp_max') double? tempMax, int? pressure, int? humidity,@JsonKey(name: 'sea_level') int? seaLevel,@JsonKey(name: 'grnd_level') int? grndLevel
 });
 
 
@@ -1081,16 +1081,16 @@ class _$WeatherMainCopyWithImpl<$Res>
 
 /// Create a copy of WeatherMain
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? temp = freezed,Object? feels_like = freezed,Object? temp_min = freezed,Object? temp_max = freezed,Object? pressure = freezed,Object? humidity = freezed,Object? sea_level = freezed,Object? grnd_level = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? temp = freezed,Object? feelsLike = freezed,Object? tempMin = freezed,Object? tempMax = freezed,Object? pressure = freezed,Object? humidity = freezed,Object? seaLevel = freezed,Object? grndLevel = freezed,}) {
   return _then(_self.copyWith(
 temp: freezed == temp ? _self.temp : temp // ignore: cast_nullable_to_non_nullable
-as double?,feels_like: freezed == feels_like ? _self.feels_like : feels_like // ignore: cast_nullable_to_non_nullable
-as double?,temp_min: freezed == temp_min ? _self.temp_min : temp_min // ignore: cast_nullable_to_non_nullable
-as double?,temp_max: freezed == temp_max ? _self.temp_max : temp_max // ignore: cast_nullable_to_non_nullable
+as double?,feelsLike: freezed == feelsLike ? _self.feelsLike : feelsLike // ignore: cast_nullable_to_non_nullable
+as double?,tempMin: freezed == tempMin ? _self.tempMin : tempMin // ignore: cast_nullable_to_non_nullable
+as double?,tempMax: freezed == tempMax ? _self.tempMax : tempMax // ignore: cast_nullable_to_non_nullable
 as double?,pressure: freezed == pressure ? _self.pressure : pressure // ignore: cast_nullable_to_non_nullable
 as int?,humidity: freezed == humidity ? _self.humidity : humidity // ignore: cast_nullable_to_non_nullable
-as int?,sea_level: freezed == sea_level ? _self.sea_level : sea_level // ignore: cast_nullable_to_non_nullable
-as int?,grnd_level: freezed == grnd_level ? _self.grnd_level : grnd_level // ignore: cast_nullable_to_non_nullable
+as int?,seaLevel: freezed == seaLevel ? _self.seaLevel : seaLevel // ignore: cast_nullable_to_non_nullable
+as int?,grndLevel: freezed == grndLevel ? _self.grndLevel : grndLevel // ignore: cast_nullable_to_non_nullable
 as int?,
   ));
 }
@@ -1176,10 +1176,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double? temp,  double? feels_like,  double? temp_min,  double? temp_max,  int? pressure,  int? humidity,  int? sea_level,  int? grnd_level)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double? temp, @JsonKey(name: 'feels_like')  double? feelsLike, @JsonKey(name: 'temp_min')  double? tempMin, @JsonKey(name: 'temp_max')  double? tempMax,  int? pressure,  int? humidity, @JsonKey(name: 'sea_level')  int? seaLevel, @JsonKey(name: 'grnd_level')  int? grndLevel)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _WeatherMain() when $default != null:
-return $default(_that.temp,_that.feels_like,_that.temp_min,_that.temp_max,_that.pressure,_that.humidity,_that.sea_level,_that.grnd_level);case _:
+return $default(_that.temp,_that.feelsLike,_that.tempMin,_that.tempMax,_that.pressure,_that.humidity,_that.seaLevel,_that.grndLevel);case _:
   return orElse();
 
 }
@@ -1197,10 +1197,10 @@ return $default(_that.temp,_that.feels_like,_that.temp_min,_that.temp_max,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double? temp,  double? feels_like,  double? temp_min,  double? temp_max,  int? pressure,  int? humidity,  int? sea_level,  int? grnd_level)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double? temp, @JsonKey(name: 'feels_like')  double? feelsLike, @JsonKey(name: 'temp_min')  double? tempMin, @JsonKey(name: 'temp_max')  double? tempMax,  int? pressure,  int? humidity, @JsonKey(name: 'sea_level')  int? seaLevel, @JsonKey(name: 'grnd_level')  int? grndLevel)  $default,) {final _that = this;
 switch (_that) {
 case _WeatherMain():
-return $default(_that.temp,_that.feels_like,_that.temp_min,_that.temp_max,_that.pressure,_that.humidity,_that.sea_level,_that.grnd_level);case _:
+return $default(_that.temp,_that.feelsLike,_that.tempMin,_that.tempMax,_that.pressure,_that.humidity,_that.seaLevel,_that.grndLevel);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -1217,10 +1217,10 @@ return $default(_that.temp,_that.feels_like,_that.temp_min,_that.temp_max,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double? temp,  double? feels_like,  double? temp_min,  double? temp_max,  int? pressure,  int? humidity,  int? sea_level,  int? grnd_level)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double? temp, @JsonKey(name: 'feels_like')  double? feelsLike, @JsonKey(name: 'temp_min')  double? tempMin, @JsonKey(name: 'temp_max')  double? tempMax,  int? pressure,  int? humidity, @JsonKey(name: 'sea_level')  int? seaLevel, @JsonKey(name: 'grnd_level')  int? grndLevel)?  $default,) {final _that = this;
 switch (_that) {
 case _WeatherMain() when $default != null:
-return $default(_that.temp,_that.feels_like,_that.temp_min,_that.temp_max,_that.pressure,_that.humidity,_that.sea_level,_that.grnd_level);case _:
+return $default(_that.temp,_that.feelsLike,_that.tempMin,_that.tempMax,_that.pressure,_that.humidity,_that.seaLevel,_that.grndLevel);case _:
   return null;
 
 }
@@ -1232,17 +1232,17 @@ return $default(_that.temp,_that.feels_like,_that.temp_min,_that.temp_max,_that.
 @JsonSerializable()
 
 class _WeatherMain implements WeatherMain {
-   _WeatherMain({required this.temp, required this.feels_like, required this.temp_min, required this.temp_max, required this.pressure, required this.humidity, required this.sea_level, required this.grnd_level});
+   _WeatherMain({required this.temp, @JsonKey(name: 'feels_like') required this.feelsLike, @JsonKey(name: 'temp_min') required this.tempMin, @JsonKey(name: 'temp_max') required this.tempMax, required this.pressure, required this.humidity, @JsonKey(name: 'sea_level') required this.seaLevel, @JsonKey(name: 'grnd_level') required this.grndLevel});
   factory _WeatherMain.fromJson(Map<String, dynamic> json) => _$WeatherMainFromJson(json);
 
 @override final  double? temp;
-@override final  double? feels_like;
-@override final  double? temp_min;
-@override final  double? temp_max;
+@override@JsonKey(name: 'feels_like') final  double? feelsLike;
+@override@JsonKey(name: 'temp_min') final  double? tempMin;
+@override@JsonKey(name: 'temp_max') final  double? tempMax;
 @override final  int? pressure;
 @override final  int? humidity;
-@override final  int? sea_level;
-@override final  int? grnd_level;
+@override@JsonKey(name: 'sea_level') final  int? seaLevel;
+@override@JsonKey(name: 'grnd_level') final  int? grndLevel;
 
 /// Create a copy of WeatherMain
 /// with the given fields replaced by the non-null parameter values.
@@ -1257,16 +1257,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WeatherMain&&(identical(other.temp, temp) || other.temp == temp)&&(identical(other.feels_like, feels_like) || other.feels_like == feels_like)&&(identical(other.temp_min, temp_min) || other.temp_min == temp_min)&&(identical(other.temp_max, temp_max) || other.temp_max == temp_max)&&(identical(other.pressure, pressure) || other.pressure == pressure)&&(identical(other.humidity, humidity) || other.humidity == humidity)&&(identical(other.sea_level, sea_level) || other.sea_level == sea_level)&&(identical(other.grnd_level, grnd_level) || other.grnd_level == grnd_level));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WeatherMain&&(identical(other.temp, temp) || other.temp == temp)&&(identical(other.feelsLike, feelsLike) || other.feelsLike == feelsLike)&&(identical(other.tempMin, tempMin) || other.tempMin == tempMin)&&(identical(other.tempMax, tempMax) || other.tempMax == tempMax)&&(identical(other.pressure, pressure) || other.pressure == pressure)&&(identical(other.humidity, humidity) || other.humidity == humidity)&&(identical(other.seaLevel, seaLevel) || other.seaLevel == seaLevel)&&(identical(other.grndLevel, grndLevel) || other.grndLevel == grndLevel));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,temp,feels_like,temp_min,temp_max,pressure,humidity,sea_level,grnd_level);
+int get hashCode => Object.hash(runtimeType,temp,feelsLike,tempMin,tempMax,pressure,humidity,seaLevel,grndLevel);
 
 @override
 String toString() {
-  return 'WeatherMain(temp: $temp, feels_like: $feels_like, temp_min: $temp_min, temp_max: $temp_max, pressure: $pressure, humidity: $humidity, sea_level: $sea_level, grnd_level: $grnd_level)';
+  return 'WeatherMain(temp: $temp, feelsLike: $feelsLike, tempMin: $tempMin, tempMax: $tempMax, pressure: $pressure, humidity: $humidity, seaLevel: $seaLevel, grndLevel: $grndLevel)';
 }
 
 
@@ -1277,7 +1277,7 @@ abstract mixin class _$WeatherMainCopyWith<$Res> implements $WeatherMainCopyWith
   factory _$WeatherMainCopyWith(_WeatherMain value, $Res Function(_WeatherMain) _then) = __$WeatherMainCopyWithImpl;
 @override @useResult
 $Res call({
- double? temp, double? feels_like, double? temp_min, double? temp_max, int? pressure, int? humidity, int? sea_level, int? grnd_level
+ double? temp,@JsonKey(name: 'feels_like') double? feelsLike,@JsonKey(name: 'temp_min') double? tempMin,@JsonKey(name: 'temp_max') double? tempMax, int? pressure, int? humidity,@JsonKey(name: 'sea_level') int? seaLevel,@JsonKey(name: 'grnd_level') int? grndLevel
 });
 
 
@@ -1294,16 +1294,16 @@ class __$WeatherMainCopyWithImpl<$Res>
 
 /// Create a copy of WeatherMain
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? temp = freezed,Object? feels_like = freezed,Object? temp_min = freezed,Object? temp_max = freezed,Object? pressure = freezed,Object? humidity = freezed,Object? sea_level = freezed,Object? grnd_level = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? temp = freezed,Object? feelsLike = freezed,Object? tempMin = freezed,Object? tempMax = freezed,Object? pressure = freezed,Object? humidity = freezed,Object? seaLevel = freezed,Object? grndLevel = freezed,}) {
   return _then(_WeatherMain(
 temp: freezed == temp ? _self.temp : temp // ignore: cast_nullable_to_non_nullable
-as double?,feels_like: freezed == feels_like ? _self.feels_like : feels_like // ignore: cast_nullable_to_non_nullable
-as double?,temp_min: freezed == temp_min ? _self.temp_min : temp_min // ignore: cast_nullable_to_non_nullable
-as double?,temp_max: freezed == temp_max ? _self.temp_max : temp_max // ignore: cast_nullable_to_non_nullable
+as double?,feelsLike: freezed == feelsLike ? _self.feelsLike : feelsLike // ignore: cast_nullable_to_non_nullable
+as double?,tempMin: freezed == tempMin ? _self.tempMin : tempMin // ignore: cast_nullable_to_non_nullable
+as double?,tempMax: freezed == tempMax ? _self.tempMax : tempMax // ignore: cast_nullable_to_non_nullable
 as double?,pressure: freezed == pressure ? _self.pressure : pressure // ignore: cast_nullable_to_non_nullable
 as int?,humidity: freezed == humidity ? _self.humidity : humidity // ignore: cast_nullable_to_non_nullable
-as int?,sea_level: freezed == sea_level ? _self.sea_level : sea_level // ignore: cast_nullable_to_non_nullable
-as int?,grnd_level: freezed == grnd_level ? _self.grnd_level : grnd_level // ignore: cast_nullable_to_non_nullable
+as int?,seaLevel: freezed == seaLevel ? _self.seaLevel : seaLevel // ignore: cast_nullable_to_non_nullable
+as int?,grndLevel: freezed == grndLevel ? _self.grndLevel : grndLevel // ignore: cast_nullable_to_non_nullable
 as int?,
   ));
 }
@@ -1584,7 +1584,7 @@ as double?,
 /// @nodoc
 mixin _$Rain {
 
- double? get h;
+@JsonKey(name: '1h') double? get h;
 /// Create a copy of Rain
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1617,7 +1617,7 @@ abstract mixin class $RainCopyWith<$Res>  {
   factory $RainCopyWith(Rain value, $Res Function(Rain) _then) = _$RainCopyWithImpl;
 @useResult
 $Res call({
- double? h
+@JsonKey(name: '1h') double? h
 });
 
 
@@ -1722,7 +1722,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double? h)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '1h')  double? h)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Rain() when $default != null:
 return $default(_that.h);case _:
@@ -1743,7 +1743,7 @@ return $default(_that.h);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double? h)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '1h')  double? h)  $default,) {final _that = this;
 switch (_that) {
 case _Rain():
 return $default(_that.h);case _:
@@ -1763,7 +1763,7 @@ return $default(_that.h);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double? h)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '1h')  double? h)?  $default,) {final _that = this;
 switch (_that) {
 case _Rain() when $default != null:
 return $default(_that.h);case _:
@@ -1778,10 +1778,10 @@ return $default(_that.h);case _:
 @JsonSerializable()
 
 class _Rain implements Rain {
-   _Rain({required this.h});
+   _Rain({@JsonKey(name: '1h') required this.h});
   factory _Rain.fromJson(Map<String, dynamic> json) => _$RainFromJson(json);
 
-@override final  double? h;
+@override@JsonKey(name: '1h') final  double? h;
 
 /// Create a copy of Rain
 /// with the given fields replaced by the non-null parameter values.
@@ -1816,7 +1816,7 @@ abstract mixin class _$RainCopyWith<$Res> implements $RainCopyWith<$Res> {
   factory _$RainCopyWith(_Rain value, $Res Function(_Rain) _then) = __$RainCopyWithImpl;
 @override @useResult
 $Res call({
- double? h
+@JsonKey(name: '1h') double? h
 });
 
 
@@ -1847,7 +1847,7 @@ as double?,
 /// @nodoc
 mixin _$Snow {
 
- double? get h;
+@JsonKey(name: '1h') double? get h;
 /// Create a copy of Snow
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1880,7 +1880,7 @@ abstract mixin class $SnowCopyWith<$Res>  {
   factory $SnowCopyWith(Snow value, $Res Function(Snow) _then) = _$SnowCopyWithImpl;
 @useResult
 $Res call({
- double? h
+@JsonKey(name: '1h') double? h
 });
 
 
@@ -1985,7 +1985,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double? h)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '1h')  double? h)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Snow() when $default != null:
 return $default(_that.h);case _:
@@ -2006,7 +2006,7 @@ return $default(_that.h);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double? h)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '1h')  double? h)  $default,) {final _that = this;
 switch (_that) {
 case _Snow():
 return $default(_that.h);case _:
@@ -2026,7 +2026,7 @@ return $default(_that.h);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double? h)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '1h')  double? h)?  $default,) {final _that = this;
 switch (_that) {
 case _Snow() when $default != null:
 return $default(_that.h);case _:
@@ -2041,10 +2041,10 @@ return $default(_that.h);case _:
 @JsonSerializable()
 
 class _Snow implements Snow {
-   _Snow({required this.h});
+   _Snow({@JsonKey(name: '1h') required this.h});
   factory _Snow.fromJson(Map<String, dynamic> json) => _$SnowFromJson(json);
 
-@override final  double? h;
+@override@JsonKey(name: '1h') final  double? h;
 
 /// Create a copy of Snow
 /// with the given fields replaced by the non-null parameter values.
@@ -2079,7 +2079,7 @@ abstract mixin class _$SnowCopyWith<$Res> implements $SnowCopyWith<$Res> {
   factory _$SnowCopyWith(_Snow value, $Res Function(_Snow) _then) = __$SnowCopyWithImpl;
 @override @useResult
 $Res call({
- double? h
+@JsonKey(name: '1h') double? h
 });
 
 

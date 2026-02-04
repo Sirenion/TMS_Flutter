@@ -36,9 +36,9 @@ class HomePage extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   child: ElevatedButton(
                     onPressed: () {
-                      context.push(route.homework1.routePath);
+                      context.push(route.practice2.routePath);
                     },
-                    child: const Text('Домашнее №1'),
+                    child: const Text('Практическое №2'),
                   ),
                 ),
               ],

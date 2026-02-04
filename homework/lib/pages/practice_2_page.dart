@@ -69,7 +69,11 @@ class Practice2Page extends StatelessWidget {
               return () => store.dispatch(const CounterActions.increment());
             },
             builder: (context, callback) {
-              return FloatingActionButton(onPressed: callback, child: const Icon(Icons.add));
+              return FloatingActionButton(
+                heroTag: 'increment',
+                onPressed: callback,
+                child: const Icon(Icons.add),
+              );
             },
           ),
           const SizedBox(height: 10.0),
@@ -78,7 +82,11 @@ class Practice2Page extends StatelessWidget {
               return () => store.dispatch(const CounterActions.decrement());
             },
             builder: (context, callback) {
-              return FloatingActionButton(onPressed: callback, child: const Icon(Icons.remove));
+              return FloatingActionButton(
+                heroTag: 'decrement',
+                onPressed: callback,
+                child: const Icon(Icons.remove),
+              );
             },
           ),
         ],
